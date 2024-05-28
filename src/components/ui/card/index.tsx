@@ -35,10 +35,7 @@ export const Card = ({ key, data }: { key: string; data: PropsData }) => {
           />
           <div className=" absolute -top-5 -right-11 flex flex-col items-center group-hover:right-1  group-hover:top-1 duration-300">
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon fontSize="medium" sx={{ color: red[800] }} />
-            </IconButton>
-            <IconButton aria-label="add to favorites">
-              <VisibilityIcon fontSize="medium" sx={{ color: blue[800] }}  />
+              <FavoriteIcon fontSize="medium" />
             </IconButton>
           </div>
         </div>
