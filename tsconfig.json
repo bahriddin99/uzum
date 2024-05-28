@@ -9,17 +9,22 @@
             "@": ["./src/*"],
             "@types": ["./src/types"],
             "@interface": ["./src/types/interface"],
+            "@ModalProps": ["./src/types/interface/global.ts"],
             "@product": ["./src/types/interface/product.ts"],
             "@enums": ["./src/types/enums"],
 
             "@utils": ["./src/utils"],
+            "@notifation": ["./src/utils/notifation"],
             "@cooki": ["./src/utils/cooki"],
             "@hooks": ["./src/hooks"],
             "@images": ["./src/assets/images/*"],
+            // "@phone": ["./src/assets/icons/phone-iconts"],
 
             "@components": ["./src/components"],
+            "@SignubModal": ["./src/components/modal"],
             "@containers": ["./src/components/containers"],
             "@ui": ["./src/components/ui"],
+            // "@ProductCart": ["./src/components/ui"], 
             "@form-ui": ["./src/components/ui/form"],
             "@sections": ["./src/components/sections"],
 

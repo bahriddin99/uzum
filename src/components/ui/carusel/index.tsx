@@ -19,7 +19,7 @@ import {
   CaruselImg2,
   CaruselImg3,
   CaruselImg4,
-  CaruselImg5,
+  CaruselImg6,
 } from "../../../assets/images";
 
 export const Carusel = () => {
@@ -28,7 +28,8 @@ export const Carusel = () => {
     CaruselImg2,
     CaruselImg3,
     CaruselImg4,
-    CaruselImg5,
+    CaruselImg6,
+
   ];
 
   return (
@@ -47,7 +48,7 @@ export const Carusel = () => {
           <SwiperSlide key={index}>
             <div className="w-full h-[400px] pt-3 ">
               <img
-                className="w-full h-full  object-fill object-center rounded-xl"
+                className="w-full h-full   object-fill object-center rounded-xl"
                 src={item}
                 alt="Carusel img"
               />

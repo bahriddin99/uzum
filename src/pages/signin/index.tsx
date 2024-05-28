@@ -1,15 +1,17 @@
 import "./style.scss";
-import { ErrorMessage, Field, Formik } from "formik";
+import { ErrorMessage, Field, Formik, Form } from "formik";
 import { Container } from "@containers";
-import { toast } from "react-toastify";
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IconButton, Button, InputAdornment, TextField } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import { signInValidationSchema } from "../../utils/validation";
 import { setCookies } from "../../utils/cooki";
 import { Signin } from "../../types/interface/aouth";
+// import SignubModal from "@SignubModal"
+// import SignubModal from "../../components/modal/signub";
 import { auth } from "../../service/auth";
+import Notifation from "@notifation";
 
 const index = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,37 +22,36 @@ const index = () => {
     email: "",
     password: "",
   };
+
   const handleSubmit = async (values: Signin) => {
     try {
       const response = await auth.signin(values);
-      console.log(auth);
-      
       if (response.status === 200) {
-        // navigate("/main")
         // setCookies("start", response?.data.created_at.slice(0, 10));
         setCookies("access_token", response?.data.access_token);
         setCookies("refresh_token", response?.data.refresh_token);
         setCookies("id", response?.data?.id);
-        toast.success("successfully logged in");
-        // setTimeout(() => {
-        //   navigate("/");
-        // }, 1000);
+        Notifation({
+          title: "Tizimga muvaffaqiyatli kirdingiz",
+          type: "success",
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
 
         // localStorage.setItem("token", response.data.access_token);
-        // Notifation({ title: "Tizimga muvaffaqiyatli kirdingiz", type: "success" });
       }
     } catch (error) {
-      // toast.error("Error : " + error?.message);
-      console.log(error);
-      // Notifation({ title: "Xatolik mavjud", type: "error" });
+      Notifation({ title: "Xatolik mavjud", type: "error" });
     }
   };
 
   return (
     <div>
       <Container>
-        <div className="h-screen flex items-center justify-center flex-col gap-8 p-5 ">
-          <h1 className="text-[35px] font-bold mt-[-150px]">Tizimga kirish</h1>
+        {/* <SignubModal /> */}
+        <div className="flex items-center justify-center flex-col gap-3 z-[-50] mt-[160px] mb-[30px] rounded-xl p-5 border ml-[400px] border-black w-[400px] h-[400px]  drop-shadow-2xl   ">
+          <h1 className="text-[35px] font-bold ">Tizimga kirish</h1>
           <div>
             <Formik
               initialValues={initialValues}
@@ -111,7 +112,10 @@ const index = () => {
                       Parolni unutdingizmi?
                     </p>
 
-                    <p className="cursor-pointer" onClick={() => navigate("/")}>
+                    <p
+                      className="cursor-pointer"
+                      onClick={() => navigate("/signup")}
+                    >
                       Ro'yxatdan o'tish qismi
                     </p>
                   </div>

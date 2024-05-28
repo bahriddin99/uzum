@@ -1,4 +1,4 @@
-import { Home, About, Service, ErrorPage, Signin } from "@pages";
+import { Home, About, Service, ErrorPage, Signin,Signup, ProductCart } from "@pages";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const router = [
@@ -12,6 +12,18 @@ const router = [
     element: <Signin />,
     content: "Kirish",
     icon: <MenuIcon />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+    
+    
+  },
+  {
+    path: "/product/:id",
+    element: <ProductCart/>,
+    
+    
   },
   {
     path: "/about",
