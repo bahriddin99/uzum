@@ -31,9 +31,9 @@ export const Card = ({ key, data }: { key: number; data: PropsData }) => {
   };
   return (
     <>
-      <div className=" border pb-[10px] relative overflow-hidden group transition rounded-md hover:shadow-lg">
+      <div className=" border pb-[10px] relative overflow-hidden  group transition rounded-md hover:shadow-lg">
         <div className="w-full mx-auto flex items-center justify-center overflow-hidden ">
-          <img
+          {<img
           onClick={() => {
             navigetBtn(data?.product_id);
           }}
@@ -41,7 +41,7 @@ export const Card = ({ key, data }: { key: number; data: PropsData }) => {
             src={data.image_url}
             alt={data.product_name}
             className="max-h-[260px] w-full  group-hover:scale-125 duration-300"
-          />
+          />}
           <div className=" absolute -top-5 -right-11 flex flex-col items-center group-hover:right-1  group-hover:top-1 duration-300">
             <IconButton
               aria-label="add to favorites"
@@ -64,16 +64,16 @@ export const Card = ({ key, data }: { key: number; data: PropsData }) => {
           </h2>
           <p>
             {" "}
-            Made in : <span className="text-red-500">{data?.made_in}</span>
+            Made in : <span className="text-gray-500">{data?.made_in}</span>
           </p>
           <p>
             {" "}
             For gender :{" "}
-            <span className="text-red-500">{data?.for_gender}</span>
+            <span className="text-gray-500">{data?.for_gender}</span>
           </p>
           <del className=" text-gray-500 font-serif ">{data?.cost} UZS</del>
           <div className="flex justify-between">
-            <p className="bg-[#299efe] rounded-md text-white   p-2">
+            <p className="bg-[#7000FF] rounded-md text-white   p-2">
               Narxi :{" "}
               <span className=" text-white">
                 {" "}
@@ -83,9 +83,9 @@ export const Card = ({ key, data }: { key: number; data: PropsData }) => {
                 UZS
               </span>
             </p>
-            <div className="border-2 border-[#299efe] rounded-md  ">
+            <div className="rounded-full h-10 w-10 border">
               <IconButton aria-label="add to favorites">
-                <ShoppingCartIcon sx={{ color: red[500] }} />
+                <ShoppingCartIcon sx={{ color: "black" }} />
               </IconButton>
             </div>
           </div>

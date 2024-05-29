@@ -1,47 +1,49 @@
 import { Home, About, Service, ErrorPage, Signin,Signup, ProductCart } from "@pages";
-import MenuIcon from "@mui/icons-material/Menu";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const router = [
-  {
-    path: "/",
-    element: <Home />,
-    // content:"Home",
-  },
+  // {
+  //   path: "/",
+  //   element: <Home />,
+  //   // content:"Home",
+  // },
   {
     path: "/signin",
     element: <Signin />,
-    content: "Kirish",
-    icon: <MenuIcon />,
+    content: " Войти",
+    icon: <PersonOutlineIcon />,
   },
-  {
-    path: "/signup",
-    element: <Signup />,
+  // {
+  //   path: "/signup",
+  //   element: <Signup />,
+  
+    
+  // },
+  // {
+  //   path: "/product/:id",
+  //   element: <ProductCart/>,
     
     
-  },
-  {
-    path: "/product/:id",
-    element: <ProductCart/>,
-    
-    
-  },
+  // },
   {
     path: "/about",
     element: <About />,
-    content: "Saralangan",
-    icon: <MenuIcon />,
+    content: "Избранное",
+    icon: <FavoriteBorderIcon />,
   },
   {
     path: "/service",
     element: <Service />,
-    content: "Savat",
-    icon: <MenuIcon />,
+    content: "Корзина",
+    icon: <ShoppingCartIcon />,
   },
 
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
+  // {
+  //   path: "*",
+  //   element: <ErrorPage />,
+  // },
 ];
 
 export default router;

@@ -11,6 +11,7 @@ import { Signin } from "../../types/interface/aouth";
 // import SignubModal from "@SignubModal"
 // import SignubModal from "../../components/modal/signub";
 import { auth } from "../../service/auth";
+import { ToastContainer } from "react-toastify";
 import Notifation from "@notifation";
 
 const index = () => {
@@ -48,6 +49,7 @@ const index = () => {
 
   return (
     <div>
+      <ToastContainer/>
       <Container>
         {/* <SignubModal /> */}
         <div className="flex items-center justify-center flex-col gap-3 z-[-50] mt-[160px] mb-[30px] rounded-xl p-5 border ml-[400px] border-black w-[400px] h-[400px]  drop-shadow-2xl   ">
