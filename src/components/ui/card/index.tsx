@@ -1,8 +1,10 @@
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { red } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
+import useLikeStore from "../../../store/like";
+import { getCookies } from "@cooki";
+import { toast } from "react-toastify";
 
 // import "./style.scss";
 
@@ -24,10 +26,27 @@ interface PropsData {
 }
 
 export const Card = ({ key, data }: { key: number; data: PropsData }) => {
+  console.log(key);
+  
   const navigate = useNavigate();
+  const { postLike , getLikes } = useLikeStore();
 
   const navigetBtn = (id: string) => {
     navigate(`/product/${id}`);
+  };
+  const btnLike = async (id: string) => {
+    if (getCookies("user_id")) {
+      const like = await postLike(id);
+      if (like === true) {
+        toast.success("was included in the list");
+        getLikes()
+      } else if (like == false) {
+        toast.info("removed from the list");
+        getLikes()
+      }
+    } else {
+      toast.info("Xatolik mavjud");
+    }
   };
   return (
     <>
@@ -38,15 +57,15 @@ export const Card = ({ key, data }: { key: number; data: PropsData }) => {
             navigetBtn(data?.product_id);
           }}
 
-            src={data.image_url}
-            alt={data.product_name}
+            src={data?.image_url[0]}
+            alt={data?.product_name}
             className="max-h-[260px] w-full  group-hover:scale-125 duration-300"
           />}
           <div className=" absolute -top-5 -right-11 flex flex-col items-center group-hover:right-1  group-hover:top-1 duration-300">
             <IconButton
               aria-label="add to favorites"
               onClick={() => {
-                console.log(data.product_id);
+                btnLike(data.product_id);
               }}
             >
               <FavoriteIcon fontSize="medium" />

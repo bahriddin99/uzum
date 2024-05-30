@@ -7,7 +7,7 @@ import useProductStore from "../../store/product";
 
 const index = () => {
   const { getProduct, data } = useProductStore();
-  const [params] = useState({ page: 1, limit: 10 });
+  const [params] = useState({ page: 1, limit: 6 });
   useEffect(() => {
     getProduct(params);
   }, [params]);

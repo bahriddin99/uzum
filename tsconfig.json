@@ -11,6 +11,7 @@
             "@interface": ["./src/types/interface"],
             "@ModalProps": ["./src/types/interface/global.ts"],
             "@product": ["./src/types/interface/product.ts"],
+            "@StoreLike": ["./src/types/interface/like.ts"],
             "@enums": ["./src/types/enums"],
 
             "@utils": ["./src/utils"],
@@ -33,7 +34,7 @@
             "@router": ["./src/router"],
             "@router-files": ["./src/router/router.tsx"],
             "@services": ["./src/service"],
-            // "@services": ["./src/service/product/product.ts"],
+            "@like": ["./src/service/like"],
             "@context": ["./src/context"],
             "@imgs" : ["./src/assets/imgages"],
 

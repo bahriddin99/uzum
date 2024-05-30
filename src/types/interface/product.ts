@@ -28,6 +28,8 @@ export interface getParams {
 export interface Product {
   get: (params: getParams) => any;
   getId : (id:string | undefined)=> any,
+  like_product: (id:string) => any
+  get_liked_products: () => any
 }
 
         
@@ -37,4 +39,6 @@ export interface StoreProduct {
   totlCount: number;
   getProduct: (params: getParams) => Promise<any>;
   getIdProduct:(id:string | undefined)=>Promise<any>;
+  likeProduct: (id:string) => void
+    getLikedProducts: () => void
 }

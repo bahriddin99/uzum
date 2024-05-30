@@ -34,6 +34,23 @@ const useProductStore = create<StoreProduct>((set) => ({
       toast.error("Error : " + error?.message);
     }
   },
+  likeProduct: async (id) => {
+    try {
+      const response = await product.like_product(id);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  getLikedProducts: async () => {
+    try {
+      const response = await product.get_liked_products();
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 }));
 
 export default useProductStore;
