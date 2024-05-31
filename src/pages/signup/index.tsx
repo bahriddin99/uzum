@@ -29,9 +29,9 @@ const index = () => {
         setCookies("access_token", response?.data.access_token);
         setCookies("refresh_token", response?.data.refresh_token);
         setCookies("id", response?.data?.id);
-        // setTimeout(() => {
-        //   navigate("/main");
-        // }, 1000);
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
 
         Notifation({
           title: "Tizimga muvaffaqiyatli kirdingiz",
@@ -44,9 +44,9 @@ const index = () => {
   };
 
   return (
-    <div className="w-full  flex items-center justify-center">
-      <div className="max-w-[710px] w-full py-10 px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px] pt-[200px]">
-        <h1 className="text-[35px] font-bold mt-[-150px] text-center">Ro'yxatdan o'tish</h1>
+    <div className=" mt-[200px] mb-[50px] flex items-center justify-center">
+      <div className="w-[610px]   border border-black px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px] pt-[50px] pb-[50px]">
+        <h1 className="text-[35px] font-bold text-center">Ro'yxatdan o'tish</h1>
         <div>
           <Formik
             initialValues={initialValues}

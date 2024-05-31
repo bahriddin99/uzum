@@ -52,7 +52,7 @@ const index = () => {
       <ToastContainer/>
       <Container>
         {/* <SignubModal /> */}
-        <div className="flex items-center justify-center flex-col gap-3 z-[-50] mt-[160px] mb-[30px] rounded-xl p-5 border ml-[400px] border-black w-[400px] h-[400px]  drop-shadow-2xl   ">
+        <div className="flex items-center justify-center flex-col gap-3 z-[-50] mt-[160px] mb-[30px] rounded-xl p-5 border ml-[400px] border-black w-[400px] h-[400px]     ">
           <h1 className="text-[35px] font-bold ">Tizimga kirish</h1>
           <div>
             <Formik

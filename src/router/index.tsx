@@ -14,7 +14,7 @@ const index = () => {
     createRoutesFromElements(
       <Route path="/" element={<App />}>
         <Route path="/" element={<Home/>}/>
-        <Route path="/" element={<Signup />}/>
+        <Route path="/signup" element={<Signup />}/>
         <Route path="/product/:id" element={<ProductCart/>}/>
         <Route path="*" element={<ErrorPage/>}/>
         {Links?.map((item) => (
